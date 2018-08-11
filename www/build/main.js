@@ -238,7 +238,7 @@ var RegalPage = /** @class */ (function () {
 //    this.Data=JSON.parse(val);
 //  });
 //  }
-//}
+///}
 //# sourceMappingURL=regal.js.map
 
 /***/ }),
