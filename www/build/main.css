@@ -25696,3 +25696,16 @@ ion-navbar.toolbar {
 .aussen {
   padding: 5% 10% 10% 5%;
 }
+
+page-statistiken h2 {
+  text-align: center;
+}
+
+page-statistiken ion-content.content {
+  color: #66cd00;
+}
+
+page-statistiken .test {
+  position: absolute;
+  top: 25%;
+}
