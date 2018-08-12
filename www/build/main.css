@@ -25678,11 +25678,32 @@ ion-navbar.toolbar {
   min-height: calc(46px + env(safe-area-inset-bottom));
 }
 
+.myTitle {
+  color: #686767;
+  font-size: 2em;
+  text-align: center;
+  padding: .5em;
+}
+
+.SubTitle {
+  color: #686767;
+  font-size: 2em;
+}
+
+.myTitle {
+  color: #686767;
+  font-size: 2em;
+  text-align: center;
+  padding: .5em;
+}
+
 .PlantName {
   color: #686767;
   height: 50px;
   width: 200px;
   display: block;
+  font-weight: bold;
+  font-size: 18px;
 }
 
 .Title {
@@ -25691,10 +25712,23 @@ ion-navbar.toolbar {
 
 .plant {
   padding: 0px 10px 0px 10px;
+  max-width: 20%;
 }
 
 .aussen {
   padding: 5% 10% 10% 5%;
+}
+
+.img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.myTitle {
+  color: #686767;
+  font-size: 2em;
+  text-align: center;
+  padding: .5em;
 }
 
 page-statistiken h2 {
@@ -25702,10 +25736,22 @@ page-statistiken h2 {
 }
 
 page-statistiken ion-content.content {
-  color: #66cd00;
+  color: #686767;
 }
 
 page-statistiken .test {
-  position: absolute;
-  top: 25%;
+  padding-top: 5em;
+  font-size: 2em;
+  text-align: center;
+}
+
+page-statistiken .zahl {
+  font-weight: bold;
+}
+
+page-statistiken .myTitle {
+  color: #686767;
+  font-size: 2em;
+  text-align: center;
+  padding: .5em;
 }

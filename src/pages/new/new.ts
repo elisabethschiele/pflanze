@@ -3,6 +3,7 @@ import { NavController } from 'ionic-angular';
 import { RestProvider } from '../../providers/rest/rest';
 import 'rxjs/add/operator/map';
 import { Storage } from '@ionic/storage';
+import { AlertController } from 'ionic-angular';
 
 @Component({
   selector: 'page-new',
@@ -14,7 +15,7 @@ export class NewPage {
   items: any;
   filteredItems: any;
 
-  constructor(public navCtrl: NavController, public restProvider: RestProvider, public storage: Storage) {
+  constructor(public navCtrl: NavController, public restProvider: RestProvider, public storage: Storage, private alertCtrl: AlertController) {
     this.getPflanzen();
   }
 
@@ -51,16 +52,34 @@ export class NewPage {
         console.log(this.a);*/
         //console.log(item);
         //console.log(val);
-        var a = {};
-        a = val + (JSON.stringify(item));
-        this.storage.set('pflanze', a);
-        console.log('neu', a);
+          var a = {};
+          if(val != null){
+            a = (JSON.stringify(item) + "," + val );
+          }
+          else{
+            a = JSON.stringify(item);
+          }
+          this.storage.set('pflanze', a);
+          console.log(a);
+      });
+      this.presentAlert(item);
+  }
+
+  presentAlert(item){
+    let alert = this.alertCtrl.create({
+      title: item.Name + ' wurde zu deinen Pflanzen hinzugefügt'
     });
+    alert.present();
   }
 
   deleteAll(){
-
-    this.storage.clear();
+console.log('loeschen');
+    this.storage.remove('pflanze').then((val) =>  {
+      this.storage.get('pflanze').then((val2) => {
+        //console.log(JSON.stringify(val2));
+        if (val2 == '') console.log('leer');
+      });
+    });
 
   }
 

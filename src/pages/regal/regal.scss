@@ -1,20 +1,26 @@
 page-regal {
+  .PlantName {
+    color: #686767;
+    height: 50px;
+    width: 200px;
+    display: block;
+    font-weight: bold;
+    font-size: 18px;
+  }
 
-}
+  .Title{
+    color: #686767;
+  }
+  .plant{
+    padding: 0px 10px 0px 10px;
+    max-width: 20%;
 
-.PlantName {
-  color: #686767;
-  height: 50px;
-  width: 200px;
-  display: block;
-}
-
-.Title{
-  color: #686767;
-}
-.plant{
-  padding: 0px 10px 0px 10px;
-}
-.aussen{
-  padding: 5% 10% 10% 5%;
+  }
+  .aussen{
+    padding: 5% 10% 10% 5%;
+  }
+  .img{
+    max-width: 100%;
+    max-height: 100%;
+  }
 }
