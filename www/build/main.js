@@ -146,11 +146,32 @@ var NewPage = /** @class */ (function () {
             _this.storage.set('pflanze', a);
             console.log(a);
         });
-        this.presentAlert(item);
+        this.presentNewPlantAlert(item);
     };
-    NewPage.prototype.presentAlert = function (item) {
+    NewPage.prototype.presentNewPlantAlert = function (item) {
         var alert = this.alertCtrl.create({
             title: item.Name + ' wurde zu deinen Pflanzen hinzugefügt'
+        });
+        alert.present();
+    };
+    NewPage.prototype.deleteAllClicked = function () {
+        this.presentDeleteAllAlert();
+    };
+    NewPage.prototype.presentDeleteAllAlert = function () {
+        var _this = this;
+        var alert = this.alertCtrl.create({
+            title: 'Möchtest du alle Daten löschen ?',
+            buttons: [
+                {
+                    text: 'Ja',
+                    handler: function () {
+                        _this.deleteAll();
+                    }
+                },
+                {
+                    text: 'Nein'
+                }
+            ]
         });
         alert.present();
     };
@@ -167,7 +188,7 @@ var NewPage = /** @class */ (function () {
     };
     NewPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-new',template:/*ion-inline-start:"/Users/elisabeth/Documents/GitHub/pflanze/src/pages/new/new.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      <div class="myTitle">\n        Neue Pflanze\n      </div>\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n    <ion-list-header>\n      <div class="SubTitle">\n        Lege hier deine Pflanze an\n      </div>\n    </ion-list-header>\n    <ion-searchbar\n      [(ngModel)]="searchTerm"\n      (ionInput)="setFilteredItems()">\n    </ion-searchbar>\n\n    <ion-list>\n        <button ion-button round outline color = "dark" *ngFor="let item of filteredItems" (click)="addPlant(item)">\n          {{item.Name}}\n        </button>\n      </ion-list>\n      <button ion-button color = "danger" (click)="deleteAll()">Alle löschen</button>\n</ion-content>\n'/*ion-inline-end:"/Users/elisabeth/Documents/GitHub/pflanze/src/pages/new/new.html"*/
+            selector: 'page-new',template:/*ion-inline-start:"/Users/elisabeth/Documents/GitHub/pflanze/src/pages/new/new.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      <div class="myTitle">\n        Neue Pflanze\n      </div>\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n    <ion-list-header>\n      <div class="SubTitle">\n        Lege hier deine Pflanze an\n      </div>\n    </ion-list-header>\n    <ion-searchbar\n      [(ngModel)]="searchTerm"\n      (ionInput)="setFilteredItems()">\n    </ion-searchbar>\n\n    <ion-list>\n\n        <button ion-button class="Auswahl" *ngFor="let item of filteredItems" (click)="addPlant(item)">\n          {{item.Name}}\n        </button>\n    \n      </ion-list>\n      <button ion-button color = "danger" (click)="deleteAllClicked()">Alle löschen</button>\n</ion-content>\n'/*ion-inline-end:"/Users/elisabeth/Documents/GitHub/pflanze/src/pages/new/new.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__providers_rest_rest__["a" /* RestProvider */], __WEBPACK_IMPORTED_MODULE_4__ionic_storage__["b" /* Storage */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]])
     ], NewPage);
@@ -371,7 +392,7 @@ var StatistikenPage = /** @class */ (function () {
     };
     StatistikenPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-statistiken',template:/*ion-inline-start:"/Users/elisabeth/Documents/GitHub/pflanze/src/pages/statistiken/statistiken.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      <div class="myTitle">\n        Statistiken\n      </div>  \n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <div class="test">\n  	<p>\n  	   Schädlich für Menschen und alle anderen Tiere, Tödlich für Babys: <span class="zahl"> {{sum}} </span> <br>\n       Microgramme die pro Stunde von deiner/n Pflanzen gefiltert werden: <span class="zahl"> {{temp}} </span> <br>\n       Du hast schon <span class="zahl"> {{auto}} </span> Stunden die Abgase deines Autos gefiltert.\n    </p>\n  </div>\n</ion-content>\n'/*ion-inline-end:"/Users/elisabeth/Documents/GitHub/pflanze/src/pages/statistiken/statistiken.html"*/
+            selector: 'page-statistiken',template:/*ion-inline-start:"/Users/elisabeth/Documents/GitHub/pflanze/src/pages/statistiken/statistiken.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      <div class="myTitle">\n        Statistiken\n      </div>\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <div class="test">\n  	<p>\n  	   Schädlich für Menschen und alle anderen Tiere, Tödlich für Babys: <span class="zahl"> {{sum}} </span> <br>\n       Microgramme die pro Stunde von deiner/n Pflanzen gefiltert werden: <span class="zahl"> {{temp}} </span> <br>\n       Du hast schon <span class="zahl"> {{auto}} </span> Stunden die Abgase deines Autos gefiltert.\n    </p>\n  </div>\n</ion-content>\n'/*ion-inline-end:"/Users/elisabeth/Documents/GitHub/pflanze/src/pages/statistiken/statistiken.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_3__ionic_storage__["b" /* Storage */]])
     ], StatistikenPage);

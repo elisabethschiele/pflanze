@@ -25685,19 +25685,30 @@ ion-navbar.toolbar {
   padding: .5em;
 }
 
-.SubTitle {
-  color: #686767;
-  font-size: 2em;
-}
-
-.myTitle {
+page-new .SubTitle {
   color: #686767;
   font-size: 2em;
   text-align: center;
-  padding: .5em;
 }
 
-.PlantName {
+page-new .Auswahl {
+  color: #686767;
+  background-color: white;
+  border: 2px solid #686767;
+}
+
+page-new .Auswahl:hover {
+  background-color: lightgrey;
+}
+
+page-new .Knopfkasten {
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+page-regal .PlantName {
   color: #686767;
   height: 50px;
   width: 200px;
@@ -25706,29 +25717,22 @@ ion-navbar.toolbar {
   font-size: 18px;
 }
 
-.Title {
+page-regal .Title {
   color: #686767;
 }
 
-.plant {
+page-regal .plant {
   padding: 0px 10px 0px 10px;
   max-width: 20%;
 }
 
-.aussen {
+page-regal .aussen {
   padding: 5% 10% 10% 5%;
 }
 
-.img {
+page-regal .img {
   max-width: 100%;
   max-height: 100%;
-}
-
-.myTitle {
-  color: #686767;
-  font-size: 2em;
-  text-align: center;
-  padding: .5em;
 }
 
 page-statistiken h2 {
@@ -25747,11 +25751,4 @@ page-statistiken .test {
 
 page-statistiken .zahl {
   font-weight: bold;
-}
-
-page-statistiken .myTitle {
-  color: #686767;
-  font-size: 2em;
-  text-align: center;
-  padding: .5em;
 }
